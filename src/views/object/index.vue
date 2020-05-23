@@ -2,27 +2,35 @@
   <div class="object">
     <div class="object-wrapper">
       <div class="object-info">
-        <div class="object-info__title">Жилой комплекс: {{ name }}</div>
+        <div class="object-info__title">Жилой комплекс: {{ object.name }}</div>
         <div class="object-info__adress">Адресс: {{ object.address }}</div>
         <div class="object-info__latitude">Широта: {{ object.latitude }}</div>
         <div class="object-info__longitude">Долгота: {{ object.longitude }}</div>
         <div class="object-info__developer">Застройщик: {{ object.developer }}</div>
         <div class="object-info-slider">
           <div class="object-info-slider__title">Дома</div>
-          <el-carousel :autoplay="false" class="object-info-carousel">
-            <el-carousel-item v-for="(image, key) in items" :key="key" class="object-info-carousel__item">
-              <img :src="image.path" class="object-carousel-img" alt="Image">
+          <!--<el-carousel :autoplay="false" class="object-info-carousel">
+            <el-carousel-item v-for="(house, key) in object.houses" :key="key" class="object-info-carousel__item">
+            <div class="slider-item">
+             <div class="slider-item__title">{{ houses.name }}</div>
+              <div class="slider-item__appartamens">{{ houses.name.lenght }}</div>
+            </div>
             </el-carousel-item>
           </el-carousel>
+          -->
         </div>
     </div>
-    <div class="object-">
-      <img src="image.path" alt="ObjectImg">
+    <div class="object-image">
+      <img :src="object.image" :alt="'Картинка ' + object.name ">
     </div>
     </div>
       <div class="object-buttons">
-        <el-button type="primary">Назад</el-button>
-        <el-button type="primary" plain class="button-fill">Редактировать</el-button>
+        <router-link :to="'/objects'">
+          <button class="button button-yellow">Назад</button>
+        </router-link>
+        <router-link :to="'/objects/' + object.id + '/edit' " >
+          <button class="button button-emptyb button-edit">Редактировать</button>
+        </router-link>
       </div>
   </div>
 </template>
@@ -40,15 +48,17 @@ export default {
 .object
   margin-bottom: 20px
   &-buttons
-    margin: 60px 0 30px 0
-    text-align: center
+    margin: 40px 0 30px 40px
   &-wrapper
     display: flex
     justify-content: space-between
+    padding: 0 40px
   &-info
     &__title, &__adress, &__latitude, &__longitude, &__developer
-      font-size: 22px
+      font-size: 18px
       margin-bottom: 40px
+    &__title
+      font-size: 20px
     &-carousel
       &__item
         width: 250px
@@ -57,10 +67,24 @@ export default {
     &-slider
       &__title
         margin-bottom: 25px
+  &-image
+    max-width: 600px
+    height: 630px
   &-carousel
     width: 650px
     height: 450px
     &>img
       width: 100%
       height: 100%
+.button
+  &-edit
+    margin-left: 50px
+.slider
+  &-item
+    background-color: #4F4F4F
+.object
+  &-info
+    &-carousel
+     &__item
+      background-color: #4F4F4F
 </style>

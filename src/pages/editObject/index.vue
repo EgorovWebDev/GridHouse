@@ -1,7 +1,5 @@
 <template>
-  <div class="edit-object">
-    <editObjectView/>
-  </div>
+  <editObjectView/>
 </template>
 
 <script>
@@ -15,5 +13,4 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-</style>
+<style lang="sass" scoped></style>

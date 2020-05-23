@@ -2,22 +2,22 @@
   <div class="object-item">
     <div class="object-item-wrapper">
       <div class="object-item-info">
-      <div class="object-item-info__title"><div>{{ object.name }}</div></div>
-      <div class="object-item-info__adress">Адрес: <div>{{ object.adress }}</div></div>
-      <div class="object-item-info__houses">Домов: <div>{{ object.houses }}</div></div>
+      <div class="object-item-info__title">{{ object.name }}</div>
+      <div class="object-item-info__adress">Адрес: <div>{{ object.address }}</div></div>
+      <div class="object-item-info__houses">Домов: <div>{{ object.houses.length }}</div></div>
       <div class="object-item-info__appartaments">Квартир: <div>{{ object.appartaments }}</div></div>
       <div class="object-item-info__buttons">
-        <button class="button button-emptyb">Подробней</button>
-        <button class="button button-emptyb button-edit">Редактировать</button>
+        <router-link :to="'/objects/' + object.id" >
+         <button class="button button-emptyb">Подробней</button>
+        </router-link>
+        <router-link :to="'/objects/' + object.id + '/edit' " >
+          <button class="button button-emptyb button-edit">Редактировать</button>
+        </router-link>
       </div>
     </div>
       <div class="object-item-slider"></div>
       <div class="object-item-slider__title">Дома</div>
-        <el-carousel :autoplay="false" class="object-info-carousel">
-          <el-carousel-item v-for="(image, key) in items" :key="key" class="object-info-carousel__item">
-            <img :src="image.path" class="object-carousel-img" alt="Image">
-          </el-carousel-item>
-          </el-carousel>
+
     </div>
   </div>
 </template>
@@ -37,8 +37,6 @@ export default {
     width: 85%
     margin: 0 auto
     background-color: #ffffff
-    // background-image: url('~@/assets/img/backgroundImg1.png')
-    // background-size: cover
     margin-bottom: 30px
     border-radius: 4px
     padding: 35px

@@ -11,6 +11,8 @@
 <script>
 import ObjectItemView from '@/views/object-item'
 
+import { OBJECTS } from '@/store/objects-mock'
+
 export default {
   name: 'objectPage',
   components: {
@@ -18,36 +20,7 @@ export default {
   },
   data () {
     return {
-      objects: [
-        {
-          id: 1,
-          name: 'Жилой комплекс "Западный"',
-          adress: 'г.Ростов-на-Дону, улица Садовая, дом 13',
-          houses: 1,
-          appartaments: 50
-        },
-        {
-          id: 1,
-          name: 'Журавль2',
-          adress: 'Лупаская пупская',
-          houses: 4,
-          appartaments: 3
-        },
-        {
-          id: 1,
-          name: 'Журавль3',
-          adress: 'Лупаская пупская',
-          houses: 4,
-          appartaments: 3
-        },
-        {
-          id: 1,
-          name: 'Журавль4',
-          adress: 'Лупаская пупская',
-          houses: 4,
-          appartaments: 3
-        }
-      ]
+      objects: OBJECTS
     }
   }
 }
