@@ -37,4 +37,5 @@ export default {
       border-radius: 4px
       position: relative
       box-shadow: -3px 3px 8px 3px rgba(51, 51, 51, 0.29)
+
 </style>

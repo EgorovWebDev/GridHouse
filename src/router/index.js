@@ -9,6 +9,7 @@ const editObjectPage = () => import('@/pages/editObject/index')
 const registrationPage = () => import('@/pages/regist/index')
 const authPage = () => import('@/pages/auth/index')
 const notFoundPage = () => import('@/pages/notFound/index')
+const newObjectPage = () => import('@/pages/newObject/index')
 
 Vue.use(VueRouter)
 
@@ -48,6 +49,11 @@ const routes = [
             component: objectsPage
           },
           {
+            path: 'new',
+            name: 'newObject',
+            component: newObjectPage
+          },
+          {
             path: ':id',
             name: 'object',
             component: objectPage
@@ -56,11 +62,6 @@ const routes = [
             path: ':id/edit',
             name: 'editObject',
             component: editObjectPage
-          },
-          {
-            path: 'new',
-            name: 'newObject'
-            // component: newObjectPage
           }
         ]
       }

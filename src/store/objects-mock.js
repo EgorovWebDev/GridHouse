@@ -9,12 +9,15 @@ export const OBJECTS = [
     appartaments: 50,
     houses: [
       {
+        id: 1,
         name: 'Дом 1'
       },
       {
+        id: 2,
         name: 'Дом 2'
       },
       {
+        id: 3,
         name: 'Дом 3'
       }
     ],

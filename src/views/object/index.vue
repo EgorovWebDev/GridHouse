@@ -9,15 +9,20 @@
         <div class="object-info__developer">Застройщик: {{ object.developer }}</div>
         <div class="object-info-slider">
           <div class="object-info-slider__title">Дома</div>
-          <!--<el-carousel :autoplay="false" class="object-info-carousel">
-            <el-carousel-item v-for="(house, key) in object.houses" :key="key" class="object-info-carousel__item">
+         <el-carousel :autoplay="false"  trigger="click" arrow="never" indicator-position="outside" class="object-info-carousel">
+            <el-carousel-item sel-item v-for="(house, key) in object.houses" :key="key" class="object-info-carousel__item">
             <div class="slider-item">
-             <div class="slider-item__title">{{ houses.name }}</div>
-              <div class="slider-item__appartamens">{{ houses.name.lenght }}</div>
+             <div class="slider-item__title">{{ house.name }}</div>
+              <div class="slider-item__appartamens">Квартир: {{ house.name.length }}</div>
+              <router-link :to="'/houses/' + house.id" >
+                <button class="button button-yellow button-slider">Просмотр</button>
+              </router-link>
+              <router-link :to="'/houses/' + house.id" >
+                <button class="button button-emptyb button-slider">Редактировать</button>
+              </router-link>
             </div>
             </el-carousel-item>
           </el-carousel>
-          -->
         </div>
     </div>
     <div class="object-image">
@@ -62,8 +67,7 @@ export default {
     &-carousel
       &__item
         width: 250px
-        heigth: 250px
-        background-colo: red
+        height: 250px
     &-slider
       &__title
         margin-bottom: 25px
@@ -79,12 +83,24 @@ export default {
 .button
   &-edit
     margin-left: 50px
-.slider
-  &-item
-    background-color: #4F4F4F
 .object
   &-info
     &-carousel
      &__item
+      font-size: 20px
+      text-align: center
       background-color: #4F4F4F
+      border-radius: 5px
+      color: #ffffff
+.slider
+  &-item
+    width: 250px
+    height: 250px
+    &__title
+      margin-top: 25px
+    &__appartamens
+      margin-top: 20px
+.button
+  &-slider
+    margin-top: 20px
 </style>
