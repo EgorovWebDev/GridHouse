@@ -47,5 +47,5 @@ export default {
     color: #333333
     font-size: 45px
     margin-top: 9px
-    margin-left: 9px
+    margin-left: 8px
 </style>

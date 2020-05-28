@@ -1,6 +1,6 @@
 <template>
   <div class="form-container">
-    <authorizationView/>
+    <authorizationView @auth="onAuth($event)"/>
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
   name: 'authPage',
   components: {
     authorizationView
+  },
+  methods: {
+    onAuth (authData) {
+      console.log(authData)
+    }
   }
 }
 </script>

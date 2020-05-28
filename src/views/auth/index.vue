@@ -2,11 +2,11 @@
   <div class="form form-a">
     <div class="form-title">Авторизация</div>
       <div class="form-info">
-      <el-form ref="form-a" :model="auth">
-        <el-form-item label="Почта">
+      <el-form ref="formAuth" :model="auth" :rules="rules">
+        <el-form-item label="Почта" prop="mail">
           <el-input v-model="auth.mail" placeholder="Введите почту"></el-input>
         </el-form-item>
-        <el-form-item label="Пароль">
+        <el-form-item label="Пароль" prop="password">
           <el-input v-model="auth.password" placeholder="Введите почту"></el-input>
         </el-form-item>
         <el-form-item>
@@ -29,12 +29,22 @@ export default {
       auth: {
         mail: '',
         password: ''
+      },
+      rules: {
+        mail: [
+          { required: true, message: 'Поле обязательно для заполнение', trigger: 'blur' },
+          { type: 'email', message: 'email введён не корректно', trigger: ['blur', 'change'] }
+        ],
+        password: [
+          { required: true, message: 'Поле обязательно для заполнение', trigger: 'blur' },
+          { type: 'password', message: 'Поле обязательно для заполнение', trigger: ['blur', 'change'] }
+        ]
       }
     }
   },
   methods: {
     onSubmit () {
-      console.log(this.auth)
+      this.$emit('auth', this.auth)
     }
   }
 }

@@ -9,7 +9,13 @@
         <div class="object-info__developer">Застройщик: {{ object.developer }}</div>
         <div class="object-info-slider">
           <div class="object-info-slider__title">Дома</div>
-         <el-carousel :autoplay="false"  trigger="click" arrow="never" indicator-position="outside" class="object-info-carousel">
+         <el-carousel
+          :autoplay="false"
+          trigger="click"
+          type="card"
+          indicator-position="outside"
+          class="object-info-carousel"
+         >
             <el-carousel-item sel-item v-for="(house, key) in object.houses" :key="key" class="object-info-carousel__item">
             <div class="slider-item">
              <div class="slider-item__title">{{ house.name }}</div>

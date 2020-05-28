@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     onSubmit () {
-      console.log(this.form)
+      this.$emit('auth', this.auth)
     }
   }
 }
