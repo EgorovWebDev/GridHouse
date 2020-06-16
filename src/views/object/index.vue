@@ -24,7 +24,7 @@
                 <button class="button button-yellow button-slider">Просмотр</button>
               </router-link>
               <router-link :to="'/houses/' + house.id" >
-                <button class="button button-emptyb button-slider">Редактировать</button>
+                <button class="button button-emptyb button-slider">Шахматка</button>
               </router-link>
             </div>
             </el-carousel-item>

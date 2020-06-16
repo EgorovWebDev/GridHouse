@@ -7,6 +7,7 @@ const objectsPage = () => import('@/pages/objects/index')
 const objectPage = () => import('@/pages/object/index')
 const editObjectPage = () => import('@/pages/editObject/index')
 const registrationPage = () => import('@/pages/regist/index')
+const agreementPage = () => import('@/pages/agreement/index')
 const authPage = () => import('@/pages/auth/index')
 const notFoundPage = () => import('@/pages/notFound/index')
 const newObjectPage = () => import('@/pages/newObject/index')
@@ -32,6 +33,11 @@ const routes = [
     path: '/registration',
     name: 'registration',
     component: registrationPage
+  },
+  {
+    path: '/agreement',
+    name: 'agreement',
+    component: agreementPage
   },
   {
     path: '',

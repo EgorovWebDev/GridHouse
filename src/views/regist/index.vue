@@ -15,7 +15,7 @@
         <div class="form-agreement">
           <el-checkbox name="type" v-model="form.agreement">
           </el-checkbox>
-            <div class="form-agreement__text">Я даю согласие на <router-link :to="{name: 'aagreement'}">обработку персональных даннных</router-link></div>
+            <div class="form-agreement__text">Я даю согласие на <router-link :to="{name: 'agreement'}">обработку персональных даннных</router-link></div>
         </div>
         <div class="form-button__wrapper">
           <el-form-item>

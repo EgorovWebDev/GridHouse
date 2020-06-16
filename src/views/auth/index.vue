@@ -2,15 +2,15 @@
   <div class="form form-a">
     <div class="form-title">Авторизация</div>
       <div class="form-info">
-      <el-form ref="formAuth" :model="auth" :rules="rules">
+      <el-form ref="formAuth" :model="auth" :rules="rules" status-icon>
         <el-form-item label="Почта" prop="mail">
-          <el-input v-model="auth.mail" placeholder="Введите почту"></el-input>
+          <el-input v-model.trim="auth.mail" placeholder="Введите почту"></el-input>
         </el-form-item>
         <el-form-item label="Пароль" prop="password">
-          <el-input v-model="auth.password" placeholder="Введите почту"></el-input>
+          <el-input v-model.trim="auth.password" placeholder="Введите пароль"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="onSubmit" class="button-empty-b">Войти</el-button>
+          <el-button type="primary" @click="onSubmit(auth)" class="button-empty-b">Войти</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -32,18 +32,25 @@ export default {
       },
       rules: {
         mail: [
-          { required: true, message: 'Поле обязательно для заполнение', trigger: 'blur' },
-          { type: 'email', message: 'email введён не корректно', trigger: ['blur', 'change'] }
+          { required: true, message: 'Поле обязательно для заполнения', trigger: ['blur', 'change'] },
+          { type: 'email', message: 'email введён неверно', trigger: ['blur', 'change'] }
         ],
         password: [
-          { required: true, message: 'Поле обязательно для заполнение', trigger: 'blur' },
-          { type: 'password', message: 'Поле обязательно для заполнение', trigger: ['blur', 'change'] }
+          { required: true, message: 'Поле обязательно для заполнения', trigger: ['blur', 'change'] },
+          { min: 6, message: 'Пароль должен содержарть не менее 5 символов' }
         ]
       }
     }
   },
   methods: {
-    onSubmit () {
+    onSubmit (auth) {
+      this.$refs[auth].validate((valid) => {
+        if (valid) {
+          alert('submit!')
+        } else {
+          return false
+        }
+      })
       this.$emit('auth', this.auth)
     }
   }
@@ -52,4 +59,8 @@ export default {
 
 <style lang="sass" scoped>
 @import '~@/sass/variables.sass'
+.form
+  &-info
+    text-align: center
+    width: 45%
 </style>

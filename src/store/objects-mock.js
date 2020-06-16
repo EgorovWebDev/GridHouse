@@ -19,20 +19,7 @@ export const OBJECTS = [
       {
         id: 3,
         name: 'Дом 3'
-      },
-      {
-        id: 4,
-        name: 'Дом 4'
-      },
-      {
-        id: 5,
-        name: 'Дом 5'
-      },
-      {
-        id: 6,
-        name: 'Дом 6'
       }
-
     ],
     image: 'https://i.ibb.co/Z1kjZjw/image.png'
   },
