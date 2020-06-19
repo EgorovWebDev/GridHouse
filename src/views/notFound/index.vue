@@ -5,11 +5,21 @@
     <div class="page-eror__title">Страница не найдена</div>
     <div class="page-eror__description">Адрес набран неверно или такой страницы не существует</div>
     <div class="page-eror__button">
-        <router-link :to="{name: 'objects'}" tag="button" class="button-eror">Вернуться на главную</router-link>
+      <button class="button-eror" @click="goBack()">Вернуться назад</button>
     </div>
   </div>
 </div>
 </template>
+<script>
+export default {
+  name: 'NotFoundView',
+  methods: {
+    goBack () {
+      this.$router.go(-1)
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 @import '~@/sass/variables.sass'

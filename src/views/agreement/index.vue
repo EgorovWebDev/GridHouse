@@ -106,16 +106,24 @@
     </div>
 
     <div class="agreement-end">В целях координации действий по обеспечению безопасности персональных данных в ИП Вербицкая М.А. назначены лица, ответственные за обеспечение безопасности персональных данных.</div>
+
+    <button class="button-eror" @click="goBack()">Вернуться назад</button>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'agreementView'
+  name: 'agreementView',
+  methods: {
+    goBack () {
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 
 <style lang="sass" scoped>
+@import '~@/sass/variables.sass'
 .agreement
   padding: 25px
   &-title
@@ -143,6 +151,20 @@ export default {
           margin-top: 5px
       & > li
         margin-top: 10px
+.button-eror
+  margin-top: 25px
+  font-family: 'Roboto'
+  font-size: 20px
+  border: none
+  width: 200px
+  height: 45px
+  border-radius: 4px
+  color: $color-dark
+  background-color: $color-yellow
+  outline: none
+  &:hover
+    transform: scale(1.07)
+    transition: .2s
 @media all and (max-width: 700px)
   .agreement
     &-title

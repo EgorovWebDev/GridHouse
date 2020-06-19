@@ -2,6 +2,7 @@ export const TRANSLATE = {
   '/objects': 'Объекты',
   objects: 'Объекты',
   object: 'Объект',
+  house: 'Дом',
   '/object': 'Объект',
   '/users': 'Пользователи',
   users: 'Пользователи',

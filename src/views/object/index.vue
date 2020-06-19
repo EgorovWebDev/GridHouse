@@ -20,10 +20,10 @@
             <div class="slider-item">
              <div class="slider-item__title">{{ house.name }}</div>
               <div class="slider-item__appartamens">Квартир: {{ house.name.length }}</div>
-              <router-link :to="'/houses/' + house.id" >
+              <router-link :to="'/house/' + house.id" >
                 <button class="button button-yellow button-slider">Просмотр</button>
               </router-link>
-              <router-link :to="'/houses/' + house.id" >
+              <router-link :to="'/house/' + house.id" >
                 <button class="button button-emptyb button-slider">Шахматка</button>
               </router-link>
             </div>

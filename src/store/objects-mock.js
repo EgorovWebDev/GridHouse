@@ -10,7 +10,13 @@ export const OBJECTS = [
     houses: [
       {
         id: 1,
-        name: 'Дом 1'
+        name: 'Дом 1',
+        type: 'keks',
+        stage: 'отлично',
+        ready: 20,
+        floors: 20,
+        year: 2020,
+        fz: 1
       },
       {
         id: 2,
@@ -48,6 +54,24 @@ export const OBJECTS = [
     latitude: '12.343.1.542',
     longitudei: '17.2.15.52',
     developer: 'Чикибряк',
+    appartaments: 3,
+    houses: [
+      {
+        name: 'asd'
+      },
+      {
+        name: 'asjdbaks'
+      }
+    ],
+    image: 'https://i.ibb.co/Z1kjZjw/image.png'
+  },
+  {
+    id: 4,
+    name: 'Журавль4',
+    address: 'Лупаская пупская',
+    latitude: '12.343.1.542',
+    longitudei: '17.2.15.52',
+    developer: 'Пуполей',
     appartaments: 3,
     houses: [
       {

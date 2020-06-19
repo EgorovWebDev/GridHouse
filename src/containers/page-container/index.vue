@@ -30,12 +30,22 @@ export default {
     flex-direction: column
     align-items: center
     padding-bottom: 20px
+    width: 100%
+    min-height: 100vh
     &-wrapper
       width: 1140px
-      margin-top: 20px
       background-color: #ffffff
       border-radius: 4px
       position: relative
       box-shadow: -3px 3px 8px 3px rgba(51, 51, 51, 0.29)
-
+      margin-top: 100px
+      min-height: 83vh
+@media all and (max-width: 1140px)
+  .page
+    &-container
+      background-image: unset
+      padding: 0
+      &-wrapper
+        margin-top: 0
+        width: 100%
 </style>

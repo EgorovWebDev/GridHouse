@@ -23,12 +23,16 @@
     </el-form>
     <div class="current-images">
       <div class="current-images__title">Текущие изображения</div>
+      <UploadView v-model="form.image"/>
      </div>
   </div>
+  {{ form }}
 </div>
 </template>
 
 <script>
+import UploadView from '@/views/upload'
+
 export default {
   name: 'editObjectView',
   data () {
@@ -37,17 +41,23 @@ export default {
         name: '',
         latitude: '',
         longitude: '',
-        address: ''
+        address: '',
+        image: 'blob:http://localhost:8080/764be5ab-60d7-4e8d-af6f-3b92fd8b56b2'
       }
     }
+  },
+  components: {
+    UploadView
   }
 }
 </script>
 
 <style lang="sass" scoped>
 @import '~@/sass/variables.sass'
+.upload-element
+  margin-top: 25px
 .object-wrapper
-  padding: 0px 40px 40px 40px
+  padding: 0px 40px 80px 40px
 .current
   &-images
     &__title

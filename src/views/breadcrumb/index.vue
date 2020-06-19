@@ -75,5 +75,5 @@ export default {
   padding: 25px 0 15px 25px
   margin-bottom: 35px
   border-bottom: 2px solid #333
-  width: 98%
+  width: 100%
 </style>
