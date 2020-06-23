@@ -9,6 +9,7 @@ const editObjectPage = () => import('@/pages/editObject/index')
 const housePage = () => import('@/pages/house/index')
 const editHousePage = () => import('@/pages/editHouse/index')
 const newHousePage = () => import('@/pages/newHouse/index')
+const usersPage = () => import('@/pages/users/index')
 const settingsPage = () => import('@/pages/settings/index')
 const registrationPage = () => import('@/pages/regist/index')
 const agreementPage = () => import('@/pages/agreement/index')
@@ -43,11 +44,18 @@ const routes = [
     name: 'agreement',
     component: agreementPage
   },
+
   {
     path: '',
     redirect: '/objects',
     component: pageContainer,
     children: [
+      // USERS
+      {
+        path: '/users',
+        name: 'users',
+        component: usersPage
+      },
       // SETTINGS
       {
         path: '/settings',
@@ -67,12 +75,12 @@ const routes = [
           {
             path: 'new',
             name: 'houseNew',
-            component: editHousePage
+            component: newHousePage
           },
           {
             path: ':id/edit',
             name: 'houseEdit',
-            component: newHousePage
+            component: editHousePage
           }
         ]
       },

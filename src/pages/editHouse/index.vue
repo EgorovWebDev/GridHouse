@@ -1,11 +1,16 @@
 <template>
-  <div class="">хуй</div>
+  <editHouseView/>
 </template>
 
 <script>
+import editHouseView from '@/views/editHouse'
+
 export default {
-  name: 'editHousePage'
+  name: 'editHousePage',
+  components: {
+    editHouseView
+  }
 }
 </script>
 
-<style></style>
+<style lang="sass" scoped></style>

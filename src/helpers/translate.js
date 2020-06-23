@@ -9,5 +9,5 @@ export const TRANSLATE = {
   '/settings': 'Настройки',
   settings: 'Настройки',
   new: 'Добавить',
-  edit: 'Редактровать'
+  edit: 'Редактировать'
 }

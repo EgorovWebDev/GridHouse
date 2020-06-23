@@ -2,7 +2,7 @@
   <div class="form form-a">
     <div class="form-title">Авторизация</div>
       <div class="form-info">
-      <el-form ref="formAuth" :model="auth" :rules="rules" status-icon>
+      <el-form ref="formAuth" :model="auth" :rules="rules" >
         <el-form-item label="Почта" prop="mail">
           <el-input v-model.trim="auth.mail" placeholder="Введите почту"></el-input>
         </el-form-item>
@@ -43,15 +43,15 @@ export default {
     }
   },
   methods: {
-    onSubmit (auth) {
-      this.$refs[auth].validate((valid) => {
+    onSubmit (formAuth) {
+      this.$refs[formAuth].validate((valid) => {
         if (valid) {
           alert('submit!')
         } else {
           return false
         }
       })
-      this.$emit('auth', this.auth)
+      this.$emit('formAuth', this.formAuth)
     }
   }
 }
