@@ -14,6 +14,7 @@ const settingsPage = () => import('@/pages/settings/index')
 const registrationPage = () => import('@/pages/regist/index')
 const agreementPage = () => import('@/pages/agreement/index')
 const authPage = () => import('@/pages/auth/index')
+const chessPage = () => import('@/pages/chess/index')
 const notFoundPage = () => import('@/pages/notFound/index')
 const newObjectPage = () => import('@/pages/newObject/index')
 
@@ -44,7 +45,11 @@ const routes = [
     name: 'agreement',
     component: agreementPage
   },
-
+  {
+    path: '/chess/:id',
+    name: 'chess',
+    component: chessPage
+  },
   {
     path: '',
     redirect: '/objects',
@@ -62,6 +67,7 @@ const routes = [
         name: 'settings',
         component: settingsPage
       },
+      // CHESS
       // HOUSE
       {
         path: '/house',

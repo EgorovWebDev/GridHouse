@@ -59,7 +59,6 @@ export default {
 .mobile-menu
   display: none
 header
-  // display: none
   height: 83px
   background-color: #ffffff
   display: flex

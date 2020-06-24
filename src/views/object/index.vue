@@ -23,7 +23,7 @@
               <router-link :to="'/house/' + house.id" >
                 <button class="button button-yellow button-slider">Просмотр</button>
               </router-link>
-              <router-link :to="'/house/' + house.id" >
+              <router-link :to="'/chess/' + house.id" >
                 <button class="button button-emptyb button-slider">Шахматка</button>
               </router-link>
             </div>

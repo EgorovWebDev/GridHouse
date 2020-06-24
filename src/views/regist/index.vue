@@ -2,24 +2,24 @@
   <div class="form form-r">
     <div class="form-title">Регистрация</div>
     <div class="form-info">
-      <el-form ref="form-reg" :model="form">
-        <el-form-item label="Почта">
-          <el-input v-model="form.mail" placeholder="Введите почту" required></el-input>
+      <el-form ref="form-reg" :model="reg" :rules="rules">
+        <el-form-item label="Почта" prop="mail">
+          <el-input v-model="reg.mail" placeholder="Введите почту" required></el-input>
         </el-form-item>
-        <el-form-item label="Пароль">
-          <el-input v-model="form.password" placeholder="Введите пароль"></el-input>
+        <el-form-item label="Пароль" prop="password">
+          <el-input v-model="reg.password" placeholder="Введите пароль"></el-input>
         </el-form-item>
-        <el-form-item label="Повторите пароль">
-          <el-input v-model="form.passwordConfirm" placeholder="Повторите пароль"></el-input>
+        <el-form-item label="Повторите пароль" prop="reqPassword">
+          <el-input v-model="reg.reqPassword" placeholder="Повторите пароль"></el-input>
         </el-form-item>
-        <div class="form-agreement">
-          <el-checkbox name="type" v-model="form.agreement">
+        <div class="form-agreement" prop="agree">
+          <el-checkbox name="type" v-model="reg.agree">
           </el-checkbox>
             <div class="form-agreement__text">Я даю согласие на <router-link :to="{name: 'agreement'}">обработку персональных даннных</router-link></div>
         </div>
         <div class="form-button__wrapper">
           <el-form-item>
-            <el-button type="primary" @click="onSubmit" class="button-empty-b">Зарегистрироваться</el-button>
+            <el-button type="primary" @click="onSubmit(reg)" class="button-empty-b" >Зарегистрироваться</el-button>
           </el-form-item>
         </div>
       </el-form>
@@ -36,17 +36,39 @@ export default {
   name: 'registrarionView',
   data () {
     return {
-      form: {
+      reg: {
         mail: '',
         password: '',
         passwordConfirm: '',
-        agreement: false
+        agree: false
+      },
+      rules: {
+        mail: [
+          { required: true, message: 'Поле обязательно для заполнения', trigger: ['blur', 'change'] },
+          { type: 'email', message: 'email введён неверно', trigger: ['blur', 'change'] }
+        ],
+        password: [
+          { required: true, message: 'Поле обязательно для заполнения', trigger: ['blur', 'change'] },
+          { min: 6, message: 'Пароль должен содержарть не менее 5 символов' }
+        ],
+        reqPassword: [
+          { required: true, message: 'Поле обязательно для заполнения', trigger: ['blur', 'change'] },
+          { min: 6, message: 'Пароль должен содержарть не менее 5 символов' }
+        ],
+        agree: [
+          { required: true, message: 'Please input activity form', trigger: 'blur' }
+        ]
       }
     }
   },
   methods: {
-    onSubmit () {
-      this.$emit('auth', this.auth)
+    onSubmit (reg) {
+      console.log(reg)
+      if (!this.reg.mail || !this.reg.password || !this.reg.reqPassword || this.reg.agree === false) {
+        alert('Заполните форму')
+      } else {
+        this.$router.push('auth')
+      }
     }
   }
 }

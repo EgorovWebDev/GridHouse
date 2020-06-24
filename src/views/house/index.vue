@@ -10,7 +10,7 @@
         <div class="house-info__year">Год постройки: {{ house.year }}</div>
         <div class="house-info__fz">ФЗ-214: {{ house.fz }}</div>
         <div class="buttons-container">
-        <router-link :to="'/chess/id'">
+        <router-link :to="'/chess/' + house.id">
           <button class="button button-yellow">Шахматка</button>
         </router-link>
         <button class="button button-delete">Удалить дом</button>
